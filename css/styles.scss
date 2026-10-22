@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $color-fondo: #f8fafc;
 $color-tarjeta: #ffffff;
 $color-caja: #f1f5f9;
@@ -55,7 +57,7 @@ a {
 }
 
 .badge-principal {
-    background-color: lighten($color-principal, 45%);
+    background-color: color.adjust($color-principal, $lightness: 45%);
     color: $color-principal;
     border: 1px solid $color-principal;
     border-radius: 20px;
@@ -78,7 +80,7 @@ a {
 }
 
 .btn-principal:hover {
-    background-color: darken($color-principal, 10%);
+    background-color: color.adjust($color-principal, $lightness: -10%);
 }
 
 .header-flotante {
@@ -200,37 +202,37 @@ a {
 .sat-1 {
     top: 12px;
     left: 65px;
-    border-color: #f97316;
+    border-color: color.adjust(#f97316, $lightness: 20%);
 }
 
 .sat-2 {
     top: 12px;
     right: 65px;
-    border-color: $color-principal;
+    border-color: color.adjust($color-principal, $lightness: -10%);
 }
 
 .sat-3 {
     top: 177px;
     left: 0px;
-    border-color: #eab308;
+    border-color: color.adjust(#eab308, $lightness: 20%);
 }
 
 .sat-4 {
     top: 177px;
     right: 0px;
-    border-color: #ef4444;
+    border-color: color.adjust(#ef4444, $lightness: 20%);
 }
 
 .sat-5 {
     bottom: 12px;
     right: 65px;
-    border-color: $color-secundario;
+    border-color: color.adjust($color-secundario, $lightness: 20%);
 }
 
 .sat-6 {
     bottom: 12px;
     left: 65px;
-    border-color: #ec4899;
+    border-color: color.adjust(#ec4899, $lightness: 20%);
 }
 
 .tarjeta-plan {
@@ -239,7 +241,7 @@ a {
 }
 
 .tarjeta-plan:hover {
-    border-color: $color-principal;
+    border-color: color.adjust($color-principal, $lightness: -10%);
 }
 
 .precio-plan {
@@ -289,29 +291,29 @@ a {
 }
 
 .input-personalizado {
-    background-color: $color-caja !important;
-    border: 1px solid $color-borde !important;
-    color: $color-texto !important;
+    background-color: color.adjust($color-caja, $lightness: 5%) !important;
+    border: 1px solid color.adjust($color-borde, $lightness: 20%) !important;
+    color: color.adjust($color-texto, $lightness: -20%) !important;
     border-radius: 8px !important;
     padding: 10px 14px !important;
 }
 
 .input-personalizado:focus {
-    border-color: $color-principal !important;
+    border-color: color.adjust($color-principal, $lightness: -10%) !important;
     outline: none;
 }
 
 .pie-pagina {
-    background-color: darken($color-fondo, 3%);
-    border-top: 1px solid $color-borde;
+    background-color: color.adjust($color-fondo, $lightness: -3%);
+    border-top: 1px solid color.adjust($color-borde, $lightness: 20%);
 }
 
 .pie-pagina a {
-    color: $color-texto-muted;
+    color: color.adjust($color-texto-muted, $lightness: 20%);
 }
 
 .pie-pagina a:hover {
-    color: $color-principal;
+    color: color.adjust($color-principal, $lightness: -10%);
 }
 
 @media (max-width: 991px) {
